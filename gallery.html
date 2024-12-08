@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('teal_background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+        .section-title {
+            font-size: 24px;
+            color: teal;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        .photo {
+            width: 200px; 
+            height: 200px; 
+            background-color: #e0f7fa;
+            border: 2px solid teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 5px;
+            cursor: pointer; 
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7); 
+            overflow: auto;
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- FAMILY Section -->
+    <div>
+        <h2 class="section-title">FAMILY</h2>
+        <div class="photo-grid">
+            <div class="photo" onclick="openModal('family 1.jpg')"><img src="family 1.jpg" alt="Family 1"></div>
+            <div class="photo" onclick="openModal('family 2.jpg')"><img src="family 2.jpg" alt="Family 2"></div>
+            <div class="photo" onclick="openModal('family 3.jpg')"><img src="family 3.jpg" alt="Family 3"></div>
+            <div class="photo" onclick="openModal('family 4.jpg')"><img src="family 4.jpg" alt="Family 4"></div>
+            <div class="photo" onclick="openModal('family 5.jpg')"><img src="family 5.jpg" alt="Family 5"></div>
+            <div class="photo" onclick="openModal('family 6.jpg')"><img src="family 6.jpg" alt="Family 6"></div>
+            <div class="photo" onclick="openModal('family 7.jpg')"><img src="family 7.jpg" alt="Family 7"></div>
+            <div class="photo" onclick="openModal('family 8.jpg')"><img src="family 8.jpg" alt="Family 8"></div>
+            <div class="photo" onclick="openModal('family 9.jpg')"><img src="family 9.jpg" alt="Family 9"></div>
+            <div class="photo" onclick="openModal('family 10.jpg')"><img src="family 10.jpg" alt="Family 10"></div>
+        </div>
+    </div>
+
+    <!-- FRIENDS Section -->
+    <div>
+        <h2 class="section-title">FRIENDS</h2>
+        <div class="photo-grid">
+            <div class="photo" onclick="openModal('friends 1.jpg')"><img src="friends 1.jpg" alt="Friends 1"></div>
+            <div class="photo" onclick="openModal('friends 2.jpg')"><img src="friends 2.jpg" alt="Friends 2"></div>
+            <div class="photo" onclick="openModal('friends 3.jpg')"><img src="friends 3.jpg" alt="Friends 3"></div>
+            <div class="photo" onclick="openModal('friends 4.jpg')"><img src="friends 4.jpg" alt="Friends 4"></div>
+            <div class="photo" onclick="openModal('friends 5.jpg')"><img src="friends 5.jpg" alt="Friends 5"></div>
+            <div class="photo" onclick="openModal('friends 6.jpg')"><img src="friends 6.jpg" alt="Friends 6"></div>
+            <div class="photo" onclick="openModal('friends 7.jpg')"><img src="friends 7.jpg" alt="Friends 7"></div>
+            <div class="photo" onclick="openModal('friends 8.jpg')"><img src="friends 8.jpg" alt="Friends 8"></div>
+            <div class="photo" onclick="openModal('friends 9.jpg')"><img src="friends 9.jpg" alt="Friends 9"></div>
+            <div class="photo" onclick="openModal('friends 10.jpg')"><img src="friends 10.jpg" alt="Friends 10"></div>
+        </div>
+    </div>
+
+    <!-- MYSELF Section -->
+    <div>
+        <h2 class="section-title">MYSELF</h2>
+        <div class="photo-grid">
+            <div class="photo" onclick="openModal('myself 1.jpg')"><img src="myself 1.jpg" alt="Myself 1"></div>
+            <div class="photo" onclick="openModal('myself 2.jpg')"><img src="myself 2.jpg" alt="Myself 2"></div>
+            <div class="photo" onclick="openModal('myself 3.jpg')"><img src="myself 3.jpg" alt="Myself 3"></div>
+            <div class="photo" onclick="openModal('myself 4.jpg')"><img src="myself 4.jpg" alt="Myself 4"></div>
+            <div class="photo" onclick="openModal('myself 5.jpg')"><img src="myself 5.jpg" alt="Myself 5"></div>
+            <div class="photo" onclick="openModal('myself 6.jpg')"><img src="myself 6.jpg" alt="Myself 6"></div>
+            <div class="photo" onclick="openModal('myself 7.jpg')"><img src="myself 7.jpg" alt="Myself 7"></div>
+            <div class="photo" onclick="openModal('myself 8.jpg')"><img src="myself 8.jpg" alt="Myself 8"></div>
+            <div class="photo" onclick="openModal('myself 9.jpg')"><img src="myself 9.jpg" alt="Myself 9"></div>
+            <div class="photo" onclick="openModal('myself 10.jpg')"><img src="myself 10.jpg" alt="Myself 10"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Function to open the modal and show the clicked image
+        function openModal(imageSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImage.src = imageSrc; 
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none"; 
+        }
+    </script>
+    <!-- VIDEOS Section -->
+<div>
+    <h2 class="section-title">VIDEOS</h2>
+    <div class="photo-grid">
+        <div class="photo" onclick="openVideoModal('dalulu.mp4')"><img src="dalulu.jpg" alt="Video 1"></div>
+        <div class="photo" onclick="openVideoModal('imut polos suci.mp4')"><img src="imut polos suci.jpg" alt="Video 2"></div>
+        <div class="photo" onclick="openVideoModal('bekeng.mp4')"><img src="bekeng.jpg" alt="Video 3"></div>
+        <div class="photo" onclick="openVideoModal('kucing.mp4')"><img src="kucing.jpg" alt="Video 3"></div>
+        <div class="photo" onclick="openVideoModal('hud makan nasi.mp4')"><img src="hud makan nasi.jpg" alt="Video 3"></div>
+    </div>
+</div>
+
+<!-- Modal for Video -->
+<div id="videoModal" class="modal" onclick="closeVideoModal(event)">
+    <span class="close" onclick="closeVideoModal(event)">&times;</span>
+    <video id="modalVideo" class="modal-content" controls></video>
+</div>
+
+<script>
+    // Function to open the modal and show the clicked video
+    function openVideoModal(videoSrc) {
+        var videoModal = document.getElementById("videoModal");
+        var modalVideo = document.getElementById("modalVideo");
+        videoModal.style.display = "block"; 
+        modalVideo.src = videoSrc; 
+        modalVideo.play(); 
+    }
+
+    // Function to close the video modal
+    function closeVideoModal(event) {
+        // Prevent closing the modal when clicking on the video
+        if (event.target === document.getElementById("videoModal") || event.target === document.querySelector('.close')) {
+            var videoModal = document.getElementById("videoModal");
+            var modalVideo = document.getElementById("modalVideo");
+            modalVideo.pause(); 
+            modalVideo.src = ''; 
+            videoModal.style.display = "none"; 
+        }
+    }
+</script>
+</body>
+</html>
+<!-- Footer Section -->
+<footer style="margin-top: 50px; text-align: center; font-size: 0.8rem; color: teal;">
+    <!-- Back Button -->
+    <a href="javascript:history.back()">
+        <button style="background-color: teal; color: cyan; border: none; padding: 10px 20px; font-size: 1rem; cursor: pointer; border-radius: 5px; transition: background-color 0.3s ease; margin-bottom: 10px;">
+            Go Back
+        </button>
+    </a>
+    <br>
+    <!-- Copyright Label -->
+    © 2024 Izreen Yasmin. All rights reserved.
+</footer>

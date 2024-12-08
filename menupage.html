@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izreen World Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('teal_background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .box {
+            width: 150px;
+            height: 200px;
+            background-color: teal;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        .box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .box label {
+            color: cyan;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-container">
+        <!-- Biodata Box -->
+        <div class="box" onclick="navigateTo('Biodata')">
+            <img src="biodata_image.jpg" alt="Biodata Photo">
+            <label>Biodata</label>
+        </div>
+
+        <!-- Experience Box -->
+        <div class="box" onclick="navigateTo('Experience')">
+            <img src="experience_image.jpg" alt="Experience Photo">
+            <label>Experience</label>
+        </div>
+
+        <!-- Education Box -->
+        <div class="box" onclick="navigateTo('Education')">
+            <img src="education_image.jpg" alt="Education Photo">
+            <label>Education</label>
+        </div>
+
+        <!-- Family Box -->
+        <div class="box" onclick="navigateTo('Family')">
+            <img src="family_image.jpg" alt="Family Photo">
+            <label>Family</label>
+        </div>
+
+        <!-- Gallery Box -->
+        <div class="box" onclick="navigateTo('Gallery')">
+            <img src="gallery_image.jpg" alt="Gallery Photo">
+            <label>Gallery</label>
+        </div>
+
+        <!-- Social Media Box -->
+        <div class="box" onclick="navigateTo('Social Media')">
+            <img src="socialmedia_image.jpg" alt="Social Media Photo">
+            <label>Social Media</label>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(section) {
+            // You can adjust the links here depending on your file structure
+            let page = '';
+            switch(section) {
+                case 'Biodata':
+                    page = 'biodata.html';
+                    break;
+                case 'Experience':
+                    page = 'experience.html';
+                    break;
+                case 'Education':
+                    page = 'education.html';
+                    break;
+                case 'Family':
+                    page = 'family.html';
+                    break;
+                case 'Gallery':
+                    page = 'gallery.html';
+                    break;
+                case 'Social Media':
+                    page = 'socialmedia.html';
+                    break;
+            }
+            
+            // Redirect to the respective page
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
+<!-- Footer Section -->
+<footer style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8rem; color: teal;">
+    <!-- Back Button -->
+    <a href="javascript:history.back()">
+        <button style="background-color: teal; color: cyan; border: none; padding: 10px 20px; font-size: 1rem; cursor: pointer; border-radius: 5px; transition: background-color 0.3s ease; margin-bottom: 10px;">
+            Go Back
+        </button>
+    </a>
+    <br>
+    <!-- Copyright Label -->
+    © 2024 Izreen Yasmin. All rights reserved.
+</footer>
